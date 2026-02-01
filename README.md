@@ -197,7 +197,12 @@ Features:
 - Automatic summarization
 
 
-### 3.3. Export Workflow Graph (Optional)
+### 3.3. Output for 2 functional requirements: Session Memory via Summarization and Query Understanding Pipeline
+You may find the log files in the folder `/logs`:
+- Session Memory via Summarization: `session_memory.jsonl`
+- Query Understanding Pipeline: `query_analysis.jsonl`
+
+### 3.4. Export Workflow Graph built in LangGraph (Optional)
 
 ```bash
 python scripts/export_graph.py
