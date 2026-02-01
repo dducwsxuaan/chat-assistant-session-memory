@@ -1,0 +1,50 @@
+1. The "Big Dump" (Flow 1: Summarization)
+Input: "I'm planning a large-scale e-commerce platform. We need a microservices architecture using Go for the backend and Next.js for the frontend. We are targeting the European market, so GDPR compliance is a non-negotiable constraint. For the database, we need PostgreSQL and MongoDB. We also need to integrate Stripe and AWS. The initial budget is $50,000, and we want to launch the MVP in six months. Safety is our top priority, so we need end-to-end encryption for user data."
+
+Goal: Force the MemoryManager to trigger trigger_summarization().
+
+Expected Output: session_memory.jsonl should be updated with these facts.
+
+2. The "Vague Pronoun" (Flow 2: Ambiguity)
+Input: "What about its cost?"
+
+Goal: Test is_ambiguous and rewritten_query.
+
+Expected Output: rewritten_query should mention "AWS hosting cost" or "E-commerce platform cost".
+
+3. Constraint-Aware Recommendation
+Input: "Which cloud hosting should I use to save money?"
+
+Goal: Check if it pulls user_profile.constraints ($50k budget).
+
+Expected Output: needed_context_from_memory includes ["user_profile.constraints"].
+
+4. Factual Contradiction
+Input: "Since we are using Python for the backend, is it fast?"
+
+Goal: Detect that the memory says Go, not Python.
+
+Expected Output: The final response should correct the user: "Actually, we decided to use Go..."
+
+5. Timeline Compression
+Input: "The deadline changed. We only have 3 months left."
+
+Goal: Test if the system recognizes the stress on the "6-month MVP" constraint.
+
+Expected Output: rewritten_query reflects the new 3-month urgency.
+
+6. Project Pivot
+Input: "Let's swap MongoDB for Cassandra. Is that okay?"
+
+Goal: Logic check against current tech stack.
+
+Expected Output: needed_context_from_memory includes ["key_facts", "decisions"].
+
+7. Post-Summarization Recall
+Action: Restart the script or clear history, but keep session_memory.jsonl.
+
+Input: "Which payment provider did we choose earlier?"
+
+Goal: Prove that the system doesn't need chat history if it has the summary.
+
+Expected Output: "We agreed on Stripe."

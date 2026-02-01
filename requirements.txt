@@ -1,0 +1,9 @@
+pydantic
+openai
+tiktoken
+groq
+dotenv
+langgraph 
+langchain_openai 
+langchain_groq
+streamlit
