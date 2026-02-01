@@ -127,8 +127,8 @@ graph TD
 ### 2.2. Clone Repository
 
 ```bash
-git clone <repo_url>
-cd <repo_name>
+git clone https://github.com/dducwsxuaan/chat-assistant-session-memory.git
+cd chat-assistant-session-memory
 ```
 
 ### 2.3. Install Dependencies
