@@ -140,6 +140,8 @@ pip install -r requirements.txt
 ### 2.4. API Key Configuration
 This project does not store API keys in the Repository
 
+In this project, model `qwen/qwen3-32b` is used via `GROQ API`. Therefore, you need to get your API key from GROQ platform: <a href="https://console.groq.com/keys?_gl=1*1ie9rn9*_gcl_au*MjAxMDQ5MzIxMS4xNzcwMDA2OTU1*_ga*MTkwNjk5NDA2Ny4xNzcwMDA2OTU1*_ga_4TD0X2GEZG*czE3NzAwMDY5NTUkbzEkZzAkdDE3NzAwMDY5NTUkajYwJGwwJGgw" target="_blank">Create GROQ API keys</a>
+
 Set your API key as an environment variable:
 
 #### Windows (PowerShell)
@@ -168,7 +170,7 @@ python src/app.py
 In the terminal, you will see:
 
 ```makefile
-You: 
+User: 
 ```
 Type your query and interact with the assistant.
 
