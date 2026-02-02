@@ -31,6 +31,8 @@ class MemoryManager:
     def trigger_summarization(self) -> bool:
         if self.count_tokens() < self.threshold:
             return False
+        
+        print("================= Triggering summarization due to token threshold exceeded =================")
 
         system_msg = """Summarize the conversation into the following JSON schema. 
                         Always stick to the facts in the conversation. 
