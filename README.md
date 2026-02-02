@@ -160,7 +160,9 @@ export GROQ_API_KEY="your_api_key"
 
 In this project, there are 2 versions for running the system: CLI and Streamlit UI
 
-To test the system, you may find the test case in `test.txt`. Please use the value of key `Input` to test.
+To test the system, you may find the test case in `test.txt`. For each requirement, there are some sample queries to try out.
+To get better result demonstration, you may delete the existing log files in `/logs` folder before running the demo, or just delete their contents.
+Make sure that you have already checked the old logs for reference and test evaluation.
 
 ### 3.1. Run CLI version
 
@@ -203,6 +205,10 @@ Features:
 You may find the log files in the folder `/logs`:
 - Session Memory via Summarization: `session_memory.jsonl`
 - Query Understanding Pipeline: `query_analysis.jsonl`
+
+In these files, there are some sample outputs. If you input more queries and exceed the token threshold, 
+you will see more session memory records in `session_memory.jsonl`. 
+All of the query understanding analysis results will be appended to `query_analysis.jsonl`.
 
 ### 3.4. Export Workflow Graph built in LangGraph (Optional)
 
